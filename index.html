@@ -11,11 +11,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        *{
+     body{
+       background-color: black
+     }
+        .container{
             background-color: white
-        }
-        body{
-            background-color: black
         }
     h1{
         text-align: center;
@@ -55,7 +55,15 @@ h3{
 #comoUsar h2 {
   text-align: center
 }
+.modal-body img{
+  display: block;
+  margin: 0 auto;
+  background-color: red
+
+}
+
     </style>
+
 </head>
 <body>
 
@@ -81,7 +89,7 @@ h3{
 
             <div class="col-md-12" id="conteudo">
                 <h1> Aplicativo Controle de Gastos</h1>
-                    <p>Tenha em mãos um otimo gerenciador de gastos! Voçê cadastra a sua despesa no aplicativo de forma simples e rápida. Saiba dos valores gastos do mês atual e do proximo mês de forma simplificada
+                    <p>Tenha em mãos um otimo gerenciador de gastos! Você cadastra a sua despesa no aplicativo de forma simples e rápida. Saiba dos valores gastos do mês atual e do proximo mês de forma simplificada
                         e tenha um apanhado geral de todos os meses do ano.
                     </p>
                 <div id="carouselExampleSlidesOnly" class="carousel slide " data-ride="carousel">
@@ -164,12 +172,12 @@ h3{
             <div id="politica">
                 <h2>Politica de privacidade</h2>
                 <p><strong>SEÇÃO 1 – Informação coletada</strong> <br/>
-                    A única informação coletada pelo aplicativo é qual o modelo do seu Iphone, nenhuma outra informação pessoal do usuário é coletada pelo aplicativo.</p>
+                    A única informação coletada pelo aplicativo é qual o modelo do seu Iphone, nenhuma outra informação pessoal do usuário é coletada.</p>
                     <p><strong>SEÇÃO 2 – Como é usada a informação coletado</strong><br/>
                     A informação sobre o modelo do seu Iphone coletada pelo aplicativo serve para melhor adaptação dos itens na tela, para assim o usuário ter uma melhor 
                         experiência no uso do aplicativo.</p>
                     <p><strong> SEÇÃO 3 - DIVULGAÇÃO</strong> <br/>
-                    O aplicativo não se faz uso de qualquer conexão externa, portanto não são feitas a divulgação do modelo de aparelho utilizado.</p>
+                    O aplicativo não faz uso de qualquer conexão externa, portanto não são feitas a divulgação do modelo de aparelho utilizado.</p>
                     <p><strong> SEÇÃO 4 - SERVIÇOS DE TERCEIROS</strong> <br/>
                     Não é utilizados serviços de terceiros tais como, Facebook, Twitter, com isso você tem total privacidade nos seus gastos informados no aplicativo.</p>
                     <p><strong> SEÇÃO 5 - SEGURANÇA</strong> <br/>
@@ -192,9 +200,10 @@ h3{
             
               </div>
               <div class="col-md-7">
-                <img src="img/tutorial.jpg" style="width:25%"/>
-                <img src="img/tutorial.jpg" style="width:25%"/>
-                <img src="img/tutorial.jpg" style="width:25%"/>
+               
+                <img src="img/tutorial.jpg"   style="width:25%" class="pop"/>
+                <img src="img/0x0ss (1).jpg" style="width:25%"class="pop"/>
+                <img src="img/image1.png" style="width:25%" class="pop"/>
               </div>
               <div class="col-md-12">
                  <strong><p>TELA PRINCIPAL </p></strong> <p>
@@ -219,15 +228,24 @@ h3{
                 <strong>Suporte, sugestões e reclamações</strong>
               </div>
                 <div class="col-md-8 offset-md-4">
-                    <p>Entrar em contato em <a href="mailto:renatobh83@icloud.com">renatobh83@icloud.com</a> </p>
-                    <p><small>© Renato Mendonça 2019</small></p>
+                    <p>Entrar em contato em <a href="mailto:renatobh83@icloud.com">renatobh83@icloud.com</a>  </p>
+                    <p><small>© Renato Mendonça 2019 -  </small>
+                    <a href="https://icons8.com.br/"><small>Icones by icons8 </small></a></p>
                 </div>
            
             </div>
             </footer>
 
-
-            
+            <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" data-dismiss="modal">
+                      <div class="modal-content"  >              
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                             <img src="" class="imagepreview" style="width: 50%;" >
+                        </div>      
+                   </div>
+                 </div>
+            </div>
         </div>
     
 
@@ -236,5 +254,14 @@ h3{
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    <script>
+      
+        $(function() {
+      $('.pop').on('click', function() {
+          $('.imagepreview').attr('src', $(this).attr('src'));
+          $('#imagemodal').modal('show');   
+      });     
+  });
+      </script>
+  </body>
 </html>
